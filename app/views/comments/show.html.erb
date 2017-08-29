@@ -10,6 +10,6 @@
 <% end %>
 
 <% @article.comments.all.each do |comment|%>
-<%= current_user.username %>: <br>
-<%=comment.content%><br>
+<%= comment.user.username %>: <br>
+<%= comment.content%><br>
 <%end%>
