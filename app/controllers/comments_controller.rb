@@ -5,18 +5,19 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @article = Article.find_by(id: params[:id])
+    @article = Article.find_by(id: params[:article_id])
     @comment = Comment.new
 
     @comment.user = current_user
     @comment.content = params[:comment][:content]
-    @comment.article = @article
+    @comment.article_id = params[:article_id]
 
-      if @comment.save
-        flash.notice = "Your comment has successfully posted"
-        redirect_to article_comment_path
+      if @comment.save!
+        flash[:notice] = "Your comment has successfully posted"
+        render :show
       else
-        flash.alert = "Comment failed to save"
+        flash[:alert] = "Comment failed to save"
+        render :show
       end
   end
 
