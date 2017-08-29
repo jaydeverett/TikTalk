@@ -16,17 +16,27 @@ class ArticlesController < ApplicationController
       secret:     '1WNzeFaOGVelOB2hl60XBtyY3AY'
     )
 
-    @articles=[]
+
+    @articles= []
+
 
     i=0
-    session.subreddit('worldnews').post_stream(limit:5) do |post|
+    session.subreddit('worldnews').post_stream(limit:10).map do |post|
+        i += 1
+        article = {}
 
-        @articles << post.title
-        i +=1
-        if i >= 5
+        article[:title] = post.title
+        article[:domain] = post.domain
+        article[:url] = post.url
+
+
+        @articles << article
+
+
+        if i >= 10
           break
-        end
 
+      end
     end
   end
 
