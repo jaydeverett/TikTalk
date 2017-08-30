@@ -5,7 +5,11 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create]
   resources :sessions, only: [:new, :create, :destroy]
   resources :articles do
-    resources :comments
+    resources :comments do
+      member do
+        put "like" => "comments#upvote"
+      end
+      end
   end
   resources :trophies
   resources :votes

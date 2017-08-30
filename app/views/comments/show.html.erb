@@ -9,7 +9,14 @@
 <%= f.submit %>
 <% end %>
 
-<% @article.comments.all.each do |comment|%>
+
+<% @comments.each do |comment,likes|%>
 <%= comment.user.username %>: <br>
 <%= comment.content%><br>
+Total Likes: <%= likes%><br/>
+<% if current_user.voted_up_on? comment%>
+<%= link_to 'Unlike', like_article_comment_path(@article.id, comment.id), class: 'like', method: 'put' %>
+<%else%>
+<%= link_to 'Like', like_article_comment_path(@article.id, comment.id), class: 'like', method: 'put' %>
+<%end%>
 <%end%>
