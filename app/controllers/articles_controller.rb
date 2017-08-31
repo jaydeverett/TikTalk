@@ -12,22 +12,9 @@ class ArticlesController < ApplicationController
 
   def index
 
-    @articles = Article.all.limit(15).order('created_at DESC')
+    @articles = Article.where(archived: false).order('created_at DESC')
 
-
-    @articles.each do |article|
-        if article.archived = true
-          article
-          @old_article.winner = article.comments.count(max).user
-          total = totallike
-          total_commetns = article.comments.count
-          started
-        endedat
-        @result = article.result.new
-        @result.wu@
-        @resylt.save
-
-        end
+  
   end
 
 
