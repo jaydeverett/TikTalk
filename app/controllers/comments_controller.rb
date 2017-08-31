@@ -35,6 +35,8 @@ class CommentsController < ApplicationController
     end
     @comments=Hash[@comments.sort_by{|k, v| v}.reverse]
 
+    @a = Comment.where(user_id: session[:user_id]).where(article_id: @article.id).present?
+
   end
 
   def edit

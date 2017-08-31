@@ -13,7 +13,7 @@ namespace :livefeed do
 
 
 
-  session.subreddit('worldnews').post_stream(limit:5).map do |post|
+  session.subreddit('worldnews').post_stream(limit:15).map do |post|
 
      @new_article =  Article.new
      @new_article.title = post.title
