@@ -11,18 +11,18 @@
 <% end %>
 <% end %>
 
-
+ <%if !current_user%>
+    <p>Login to join the conversation</p>
+ <%end%>
 <% @comments.each do |comment,likes|%>
 <%= comment.user.username %>: <br>
 <%= comment.content%><br>
-Total Likes: <%= likes%><br/>
-<%if current_user%>
+<strong>Total Likes:</strong> <%= likes%><br/>
+<%if current_user && !@article.archived %>
 <% if current_user.voted_up_on? comment%>
 <%= link_to 'Unlike', like_article_comment_path(@article.id, comment.id), class: 'like', method: 'put' %>
 <%else%>
 <%= link_to 'Like', like_article_comment_path(@article.id, comment.id), class: 'like', method: 'put' %>
 <%end%>
-<% else %>
-  <p>Login to Join the Conversation</p>
 <%end%>
 <%end%>
