@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170828160204) do
+ActiveRecord::Schema.define(version: 20170831174629) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +35,16 @@ ActiveRecord::Schema.define(version: 20170828160204) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
+  create_table "results", force: :cascade do |t|
+    t.string "article_name"
+    t.string "article_url"
+    t.string "winner"
+    t.text "top_comments", default: [], array: true
+    t.integer "number_of_comments"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "trophies", force: :cascade do |t|
     t.string "url"
     t.datetime "created_at", null: false
@@ -54,14 +64,19 @@ ActiveRecord::Schema.define(version: 20170828160204) do
   end
 
   create_table "votes", force: :cascade do |t|
-    t.boolean "upvoted"
-    t.boolean "downvoted"
+    t.string "votable_type"
+    t.bigint "votable_id"
+    t.string "voter_type"
+    t.bigint "voter_id"
+    t.boolean "vote_flag"
+    t.string "vote_scope"
+    t.integer "vote_weight"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "user_id"
-    t.bigint "comment_id"
-    t.index ["comment_id"], name: "index_votes_on_comment_id"
-    t.index ["user_id"], name: "index_votes_on_user_id"
+    t.index ["votable_id", "votable_type", "vote_scope"], name: "index_votes_on_votable_id_and_votable_type_and_vote_scope"
+    t.index ["votable_type", "votable_id"], name: "index_votes_on_votable_type_and_votable_id"
+    t.index ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope"
+    t.index ["voter_type", "voter_id"], name: "index_votes_on_voter_type_and_voter_id"
   end
 
 end
