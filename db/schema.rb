@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170830151013) do
+ActiveRecord::Schema.define(version: 20170831174629) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,16 @@ ActiveRecord::Schema.define(version: 20170830151013) do
     t.bigint "article_id"
     t.index ["article_id"], name: "index_comments_on_article_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "results", force: :cascade do |t|
+    t.string "article_name"
+    t.string "article_url"
+    t.string "winner"
+    t.text "top_comments", default: [], array: true
+    t.integer "number_of_comments"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "trophies", force: :cascade do |t|
