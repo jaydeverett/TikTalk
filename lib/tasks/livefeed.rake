@@ -13,7 +13,7 @@ namespace :livefeed do
 
 
 
-  session.subreddit('worldnews').post_stream(limit:25).map do |post|
+  session.subreddit('worldnews').post_stream(limit:50).map do |post|
 
      @new_article =  Article.new
      @new_article.title = post.title
@@ -24,7 +24,7 @@ namespace :livefeed do
      if @new_article.save
        puts "Saved!!"
      else
-       puts "Unable to Saved"
+       puts "Unable to Save"
      end
 
 

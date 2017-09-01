@@ -14,7 +14,8 @@ class ArticlesController < ApplicationController
 
     @articles = Article.where(archived: false).order('created_at DESC')
 
-  
+    
+
   end
 
 

@@ -39,6 +39,8 @@ gem 'pry-rails'
 
 gem 'acts_as_votable', '~> 0.10.0'
 
+gem 'bootstrap-sass'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
