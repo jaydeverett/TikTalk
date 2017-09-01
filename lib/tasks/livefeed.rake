@@ -1,7 +1,7 @@
 namespace :livefeed do
 
 
-  desc "Push five new posts every ten minutes"
+  desc "Push posts as they come in"
   task :reddit => :environment do
 
     session = Redd.it(
@@ -13,7 +13,7 @@ namespace :livefeed do
 
 
 
-  session.subreddit('worldnews').post_stream(limit:15).map do |post|
+  session.subreddit('worldnews').post_stream(limit:25).map do |post|
 
      @new_article =  Article.new
      @new_article.title = post.title
