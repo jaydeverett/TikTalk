@@ -12,11 +12,24 @@ document.addEventListener("DOMContentLoaded", function(event) {
   setInterval(function(){
     var timeRemaining = document.querySelectorAll('.time_left')
 
+
+
+
+
     for (var i = 0; i < timeRemaining.length; i++)
-      {timeRemaining[i].innerText = parseInt(timeRemaining[i].innerText) - 1;}
+      {
+          var date = new Date(null);
+        console.log(timeRemaining[i])
+        var seconds = new Date('1970-01-01T' + timeRemaining[i].innerText + 'Z').getTime() / 1000;
+
+        date.setSeconds(seconds - 1);
+        console.log(parseInt(seconds))
+        date.toISOString().substr(11, 8);
+
+        timeRemaining[i].innerText =   date.toISOString().substr(11, 8);}
     }, 1000);
 
-  
+
 
 
 });

@@ -12,6 +12,7 @@ class Article < ApplicationRecord
   end
 
   def time_remaining
-    7200 - ((DateTime.now.utc - self.created_at).to_i)
+    sec = 7200 - ((DateTime.now.utc - self.created_at).to_i)
+    Time.at(sec).utc.strftime("%H:%M:%S")
   end
 end
