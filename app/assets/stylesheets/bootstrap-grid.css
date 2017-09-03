@@ -13,13 +13,14 @@ html {
   box-sizing: inherit;
 }
 
-h1 {
-  font-family: 'Oswald', sans-serif;
+.newsfeedtitle {
+  font-family: 'Armata', sans-serif;
+
 }
 
-a {
-  font-family: 'Questrial', sans-serif;
-  color: black;
+body > div:nth-child(5) > div > a {
+  font-family: 'Vollkorn', serif;
+
 /*font-family: 'Old Standard TT', serif;*/
 }
 
@@ -28,10 +29,19 @@ a {
   width: 75%;
 }
 
+.conversationblock a {
+  color: #EDEDEA;
+  font-family: 'Vollkorn', serif;
+}
+
 .countdown {
   top: auto;
   display: inline-block;
   width: 20%;
+  font-family: 'Permanent Marker', cursive, Times, serif;
+  /*color: #D9223C;*/
+  font-family: 'Nunito', sans-serif;
+  /*font-family: 'Armata', sans-serif;*/
 }
 
 .container {
@@ -74,7 +84,8 @@ a {
   padding-right: 15px;
   padding-left: 15px;
   width: 100%;
-  background:rgba(0, 145, 106, 0.1);
+  background:rgba(0, 87, 27, 0.5);
+  /*background: #F58B57;*/
 }
 
 .row {
