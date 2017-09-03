@@ -1,7 +1,11 @@
-
+<div class="commenttitle">
+<%= link_to(@article.url) do  %>
 <%= @article.title%><br>
-<%= @article.url%><br>
+  <% end %>
+</div>
+<div class="commentdomain">
 <%= @article.domain%><br>
+</div>
 
 <% if @a != true && current_user%>
 <%= form_for [@article, @comment] do |f| %>
@@ -15,6 +19,7 @@
     <p>Login to join the conversation</p>
  <%end%>
 <% @comments.each do |comment,likes|%>
+<div class="commentbox">
 <%= link_to user_path(comment.user) do %>
 <%= comment.user.username %>: <br>
 <% end %>
@@ -27,4 +32,5 @@
 <%= link_to 'Like', like_article_comment_path(@article.id, comment.id), class: 'like', method: 'put' %>
 <%end%>
 <%end%>
+</div>
 <%end%>

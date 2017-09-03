@@ -2,6 +2,7 @@
   width: device-width;
 }
 
+
 html {
   box-sizing: border-box;
   -ms-overflow-style: scrollbar;
@@ -13,9 +14,18 @@ html {
   box-sizing: inherit;
 }
 
+body {
+    background: floralwhite;
+}
+
 .newsfeedtitle {
   font-family: 'Armata', sans-serif;
+  background: rgba(0, 87, 27, 0.5);
+  color: white;
+}
 
+.commenttitle {
+  font-family: 'Armata', sans-serif;
 }
 
 body > div:nth-child(5) > div > a {
@@ -27,10 +37,11 @@ body > div:nth-child(5) > div > a {
 .conversationblock {
   display: inline-block;
   width: 75%;
+  background: floralwhite;
 }
 
 .conversationblock a {
-  color: #EDEDEA;
+  color: black;
   font-family: 'Vollkorn', serif;
 }
 
@@ -40,8 +51,18 @@ body > div:nth-child(5) > div > a {
   width: 20%;
   font-family: 'Permanent Marker', cursive, Times, serif;
   /*color: #D9223C;*/
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Orbitron', sans-serif;
+
+
   /*font-family: 'Armata', sans-serif;*/
+}
+
+/*.time_left {
+  font-family: 'Permanent Marker', cursive;
+}*/
+
+.commentdomain {
+  font-family: 'Vollkorn', serif;
 }
 
 .container {
@@ -50,6 +71,11 @@ body > div:nth-child(5) > div > a {
   padding-right: 15px;
   padding-left: 15px;
   width: 100%;
+}
+
+.commentbox {
+  border: 2px solid black;
+  background: white;
 }
 
 @media (min-width: 576px) {
@@ -84,7 +110,8 @@ body > div:nth-child(5) > div > a {
   padding-right: 15px;
   padding-left: 15px;
   width: 100%;
-  background:rgba(0, 87, 27, 0.5);
+  /*border: 2px solid black;*/
+    background: floralwhite;
   /*background: #F58B57;*/
 }
 

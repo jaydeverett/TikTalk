@@ -1,6 +1,7 @@
 
 <div class="newsfeedtitle">
 <h1>Newsfeed</h1>
+<p>Time Remaining</p>
 </div>
 
 
@@ -14,7 +15,7 @@
   <%= link_to 'Join the Conversation', allcomments_path(article[:id]) %>
     </div>
 <p class='countdown'>
-Time Remaining: <span class='time_left'><%= article.time_remaining %></span>
+ <span class='time_left'><%= article.time_remaining %></span>
 </p>
 </div>
 <br>
