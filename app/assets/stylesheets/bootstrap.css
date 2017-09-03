@@ -93,9 +93,7 @@ body {
   font-weight: normal;
   line-height: 1.5;
   color: #212529;
-  /*background-color: #fff;*/
   background-color: floralwhite;
-
 }
 
 [tabindex="-1"]:focus {
@@ -3161,9 +3159,8 @@ tbody.collapse.show {
 }
 
 .nav-link {
-  display: inline-block;
+  display: block;
   padding: 0.5rem 1rem;
-
 }
 
 .nav-link:focus, .nav-link:hover {
@@ -5284,6 +5281,8 @@ a.bg-danger:focus, a.bg-danger:hover {
 .bg-light {
   background-color: #f8f9fa !important;
 }
+
+
 
 a.bg-light:focus, a.bg-light:hover {
   background-color: #dae0e5 !important;
@@ -8184,5 +8183,13 @@ a.text-dark:focus, a.text-dark:hover {
 
 .invisible {
   visibility: hidden !important;
+}
+
+.bg-custom-green{
+  background: rgba(0, 87, 27, 0.5);
+}
+
+.n-bar-custom{
+    background: rgba(0, 87, 27, 0.5);
 }
 /*# sourceMappingURL=bootstrap.css.map */

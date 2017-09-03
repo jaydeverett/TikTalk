@@ -24,6 +24,16 @@ body {
   color: white;
 }
 
+.newsheader h1 {
+  display: inline-block;
+  width: 70%
+}
+
+.clockheader p {
+  display: inline-block;
+  width: 20%;
+}
+
 .commenttitle {
   font-family: 'Armata', sans-serif;
 }
@@ -37,7 +47,7 @@ body > div:nth-child(5) > div > a {
 .conversationblock {
   display: inline-block;
   width: 75%;
-  background: floralwhite;
+  background: white;
 }
 
 .conversationblock a {
@@ -78,6 +88,12 @@ body > div:nth-child(5) > div > a {
   background: white;
 }
 
+.usertrophies {
+  background: white;
+  margin: 5px 0;
+  border: 2px solid black;
+}
+
 @media (min-width: 576px) {
   .container {
     max-width: 540px;
@@ -111,7 +127,7 @@ body > div:nth-child(5) > div > a {
   padding-left: 15px;
   width: 100%;
   /*border: 2px solid black;*/
-    background: floralwhite;
+    background: white;
   /*background: #F58B57;*/
 }
 
