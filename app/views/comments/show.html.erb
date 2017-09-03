@@ -11,7 +11,7 @@
 <%= form_for [@article, @comment] do |f| %>
 <%= f.label :content, 'Comment' %> <br>
 <%= f.text_area :content %> <br>
-<%= f.submit %>
+<%= f.submit 'Save', data: { confirm: 'Are you sure you want to make this comment? You only get one shot, choose your words wisely' }%>
 <% end %>
 <% end %>
 
