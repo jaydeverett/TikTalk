@@ -8192,4 +8192,10 @@ a.text-dark:focus, a.text-dark:hover {
 .n-bar-custom{
     background: rgba(0, 87, 27, 0.5);
 }
+
+.plain{
+  text-decoration: none;
+  color: white;
+  
+}
 /*# sourceMappingURL=bootstrap.css.map */
