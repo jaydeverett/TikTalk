@@ -15,7 +15,9 @@
     <p>Login to join the conversation</p>
  <%end%>
 <% @comments.each do |comment,likes|%>
+<%= link_to user_path(comment.user) do %>
 <%= comment.user.username %>: <br>
+<% end %>
 <%= comment.content%><br>
 <strong>Total Likes:</strong> <%= likes%><br/>
 <%if current_user && !@article.archived %>
