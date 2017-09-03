@@ -1,13 +1,19 @@
 <h1>Newsfeed</h1>
 
+
+
 <% @articles.each do |article| %>
+<div class= "container-fluid">
+<div class="conversationblock">
 <%= link_to(article[:url]) do  %>
   <%= article[:title]%>
   <% end %>
 <br>
   <%= link_to 'Join the Conversation', allcomments_path(article[:id]) %>
-<p>
+    </div>
+<p class='countdown'>
 Time Remaining: <span class='time_left'><%= article.time_remaining %></span>
 </p>
-<br><br>
+</div>
+<br>
 <% end %>

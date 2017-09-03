@@ -13,6 +13,27 @@ html {
   box-sizing: inherit;
 }
 
+h1 {
+  font-family: 'Oswald', sans-serif;
+}
+
+a {
+  font-family: 'Questrial', sans-serif;
+  color: black;
+/*font-family: 'Old Standard TT', serif;*/
+}
+
+.conversationblock {
+  display: inline-block;
+  width: 75%;
+}
+
+.countdown {
+  top: auto;
+  display: inline-block;
+  width: 20%;
+}
+
 .container {
   margin-right: auto;
   margin-left: auto;
@@ -49,9 +70,11 @@ html {
   width: 100%;
   margin-right: auto;
   margin-left: auto;
+  padding-top: 10px;
   padding-right: 15px;
   padding-left: 15px;
   width: 100%;
+  background:rgba(0, 145, 106, 0.1);
 }
 
 .row {
