@@ -1,4 +1,30 @@
-<h1><%= @user.username %> Trophies </h1>
+
+<div class="newsfeedtitle">
+<div class="newsheader">
+<h1><strong>User Page</strong></h1>
+</div>
+</div>
+
+
+<div class="profile-container">
+
+
+<div class="box-top">
+  <h1><%= @user.username %></h1>
+
+</div>
+
+<div class="display-leanings">
+
+
+  <%= render 'single_user', user: @user %>
+
+  <%= link_to('Edit', edit_user_path(@user)) %>
+
+
+
+
+</div>
 
 <% @user.articles.each do |article| %>
 <div class="usertrophies">
@@ -10,3 +36,5 @@
 <%end%>
 </div>
 <%end%>
+
+</div>

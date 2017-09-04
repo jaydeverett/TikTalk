@@ -70,6 +70,47 @@ body > div:nth-child(5) > div > a {
   /*font-family: 'Armata', sans-serif;*/
 }
 
+.profile-container{
+  width: 100%;
+  border-radius: 75%;
+
+
+}
+
+.box-top{
+  width: 100%;
+  background-color: #4682b4;
+  height: 30%;
+  margin:5px 0;
+  padding: 10px;
+
+}
+
+
+.display-leanings{
+border: 3px solid black;
+width: 27%;
+display: inline-block;
+margin: 5px 0;
+padding: 4px;
+
+}
+
+.usertrophies {
+  background: white;
+  margin: 5px 0;
+  border: 2px solid black;
+  width: 70%;
+  display: inline-block;
+  float: right;
+  padding: 4px;
+  /*border-radius: 15px;*/
+}
+
+
+
+
+
 /*.time_left {
   font-family: 'Permanent Marker', cursive;
 }*/
@@ -91,11 +132,7 @@ body > div:nth-child(5) > div > a {
   background: white;
 }
 
-.usertrophies {
-  background: white;
-  margin: 5px 0;
-  border: 2px solid black;
-}
+
 
 @media (min-width: 576px) {
   .container {
