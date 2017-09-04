@@ -14,6 +14,16 @@
   <p> Total Comments Made: <%= @user.comments.all.count%></p>
 
 
+  <% articles = [] %>
+  <% my_winning_articles = [] %>
+
+  <% @user.articles.each do |article| %>
+    <% if article.winner == @user %>
+      <% my_winning_articles << article.winner %>
+    <% end %>
+  <% end %>
+  <p> Total Battles Won: <%= my_winning_articles.count %> </p>
+
 
 
 
