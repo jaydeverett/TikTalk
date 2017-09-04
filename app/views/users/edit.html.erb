@@ -1,0 +1,7 @@
+<h1>Edit User: <%= @user.username %></h1>
+
+<%= render 'user_form', user: @user %>
+
+<p>
+  <%= link_to("Back", user_path(@user)) %>
+</p>

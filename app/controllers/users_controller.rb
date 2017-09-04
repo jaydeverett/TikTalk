@@ -10,11 +10,15 @@ class UsersController < ApplicationController
     if @user.save
       session[:user_id] = @user.id
       flash[:notice] = 'Account successfully created!'
-      redirect_to articles_path
+      redirect_to user_path(@user.id)
     else
       flash.now[:error] = 'Sorry try again!'
       render :new
     end
+
+
+
+
   end
 
   def show
@@ -22,8 +26,22 @@ class UsersController < ApplicationController
 
   end
 
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+    if @user.update(user_params)
+      flash[:notice] = "Profile successfully updated"
+      redirect_to @user
+   else
+    redirect_back_or_to @user
+  end
+
+  end
   def user_params
-    params.require(:user).permit(:username, :password, :password_confirmation)
+    params.require(:user).permit(:username, :password, :password_confirmation, :political_spectrum, :personal_hero, :personality)
   end
 
  end
