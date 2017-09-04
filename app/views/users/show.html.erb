@@ -12,6 +12,7 @@
 <div class="box-top">
   <h1><%= @user.username %></h1>
   <p> Total Comments Made: <%= @user.comments.all.count%></p>
+    <%= link_to('Edit Profile', edit_user_path(@user)) %>
 
 
 
@@ -24,7 +25,7 @@
 
   <%= render 'single_user', user: @user %>
 
-  <%= link_to('Edit', edit_user_path(@user)) %>
+
 
 
 

@@ -16,3 +16,15 @@ Type:
 <br>
 <%= @user.personality %>
 </p>
+
+<% if @user.personality == "Rogue" %>
+    <img src="/rogue.png" width="60px" height="60px">
+  <% elsif @user.personality == "Vigilante" %>
+      <img src="/vigilante.png" width="60px" height="60px">
+  <% elsif @user.personality == "Academic" %>
+      <img src="/academic.png" width="60px" height="60px">
+  <% elsif @user.personality == "Philosopher" %>
+      <img src="/philosopher.png" width="60px" height="60px">
+  <% elsif @user.personality == "Diplomat" %>
+      <img src="/diplomat.png" width="60px" height="60px">
+<% end %>
