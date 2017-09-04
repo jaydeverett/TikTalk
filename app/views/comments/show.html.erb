@@ -1,36 +1,39 @@
 <div class="commenttitle">
+
 <%= link_to(@article.url) do  %>
-<%= @article.title%><br>
+    <%= @article.title%><br>
   <% end %>
 </div>
 <div class="commentdomain">
-<%= @article.domain%><br>
+  <%= @article.domain%><br>
 </div>
 
 <% if @a != true && current_user%>
-<%= form_for [@article, @comment] do |f| %>
-<%= f.label :content, 'Comment' %> <br>
-<%= f.text_area :content %> <br>
-<%= f.submit 'Save', data: { confirm: 'Are you sure you want to make this comment? You only get one shot, choose your words wisely' }%>
-<% end %>
+  <%= form_for [@article, @comment] do |f| %>
+    <%= f.label :content, 'Comment' %> <br>
+    <%= f.text_area :content %> <br>
+    <%= f.submit 'Save', data: { confirm: 'Are you sure you want to make this comment? You only get one shot, choose your words wisely.' }%>
+  <% end %>
 <% end %>
 
  <%if !current_user%>
     <p>Login to join the conversation</p>
  <%end%>
 <% @comments.each do |comment,likes|%>
-<div class="commentbox">
-<%= link_to user_path(comment.user) do %>
-<%= comment.user.username %>: <br>
-<% end %>
-<%= comment.content%><br>
-<strong>Total Likes:</strong> <%= likes%><br/>
-<%if current_user && !@article.archived %>
-<% if current_user.voted_up_on? comment%>
-<%= link_to 'Unlike', like_article_comment_path(@article.id, comment.id), class: 'like', method: 'put' %>
-<%else%>
-<%= link_to 'Like', like_article_comment_path(@article.id, comment.id), class: 'like', method: 'put' %>
-<%end%>
-<%end%>
-</div>
+  <div class="commentbox">
+    <%= link_to user_path(comment.user) do %>
+      <%= comment.user.username %>: <br>
+  <% end %>
+  <%= comment.content%><br>
+  <strong>Total Likes:</strong> <%= likes%><br/>
+    <%if current_user && !@article.archived %>
+    <% if current_user.voted_up_on? comment%>
+    <%= link_to 'Unlike', like_article_comment_path(@article.id, comment.id), class: 'like', method: 'put' %>
+    <%else%>
+    <%= link_to 'Like', like_article_comment_path(@article.id, comment.id), class: 'like', method: 'put' %>
+    <%end%>
+  <%end%>
+
+  </div>
+
 <%end%>
