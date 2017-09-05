@@ -26,6 +26,18 @@ document.addEventListener("DOMContentLoaded", function(event) {
         console.log(parseInt(seconds))
         date.toISOString().substr(11, 8);
 
+        if (seconds < 1502) {
+
+          timeRemaining[i].style.color = '#f4ce42';
+        }
+        if (seconds < 602) {
+          timeRemaining[i].style.color = '#ea3225';
+        }
+        if (seconds === 2) {
+          var timeBox = document.querySelectorAll('.container-fluid') {
+            for (var i = 0; i < timeBox.length; i++) {
+              timeBox[i].style.display = 'none';
+            }
         timeRemaining[i].innerText =   date.toISOString().substr(11, 8);}
     }, 1000);
 

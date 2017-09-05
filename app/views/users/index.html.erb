@@ -1,0 +1,18 @@
+<h1>Leaderboard</h1>
+
+<% winners = [] %>
+
+
+<% @articles.each do |article| %>
+  <% winners << article.winner %>
+<% end %>
+  
+
+has where key is the user, value is the sum of times name appears in winners array
+
+sum = 0
+
+
+ leaderboard = {}
+ <% winners.each.do |winner| %>
+    <% %>
