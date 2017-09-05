@@ -1,18 +1,18 @@
 
 <div class="newsfeedtitle">
 <div class="newsheader">
-<h1><strong>User Page</strong></h1>
+<h1><strong>Profile</strong></h1>
 </div>
 </div>
 
 
-<div class="profile-container">
+<!-- <div class="profile-container"> -->
+<div class="wholeprofile">
 
 
 <div class="box-top">
   <h1><%= @user.username %></h1>
   <p> Total Comments Made: <%= @user.comments.all.count%></p>
-    <%= link_to('Edit Profile', edit_user_path(@user)) %>
 
 
   <% articles = [] %>
@@ -25,25 +25,25 @@
   <% end %>
   <p> Total Battles Won: <%= my_winning_articles.count %> </p>
 
-
-
-
+  <div class="edit_profile">
+    <%= link_to('Edit Profile', edit_user_path(@user)) %>
+  </div>
 </div>
 
-<div class="display-leanings">
 
+
+
+<aside class="display-leanings">
 
   <%= render 'single_user', user: @user %>
 
+</aside>
 
 
 
 
-
-</div>
-
-<% @user.articles.each do |article| %>
 <div class="usertrophies">
+  <% @user.articles.each do |article| %>
 
 <% if article.winner == @user %>
     <img src="/trop.png" width="50px" height="50px">
@@ -51,8 +51,8 @@
     Total Comments on Article:<%=article.comments.count%><br>
     My Likes on that comment:<%article.comments.where(user_id: @user.id).each do |comment| %><%= comment.get_likes.size%><%end%><br>
 
+<%end%> <hr>
 <%end%>
 </div>
-<%end%>
-
 </div>
+<!-- </div> -->

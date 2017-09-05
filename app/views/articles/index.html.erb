@@ -13,7 +13,9 @@
   <%= article[:title]%>
   <% end %>
 <br>
-  <%= link_to 'Join the Conversation', allcomments_path(article[:id]) %>
+  <span style="background-color: #D8D8D8; font-style: italic; color: white;">
+    <%= link_to 'Join the Conversation', allcomments_path(article[:id]) %>
+  </span>
     </div>
 <p class='countdown'>
  <span class='time_left'><%= article.time_remaining %></span>
