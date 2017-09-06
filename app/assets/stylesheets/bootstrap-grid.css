@@ -205,6 +205,8 @@ nav-item a {
   font-family: 'Armata', sans-serif;
   background: rgba(0, 87, 27, 1);
   color: white;
+  padding: 3px;
+  padding-left: 12px;
 }
 
 .leaderboardslot {
