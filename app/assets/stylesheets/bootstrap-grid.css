@@ -196,7 +196,16 @@ nav-item a {
   display: inline-block;
 }
 
+.leaderboardtitle {
+  font-family: 'Armata', sans-serif;
+}
 
+.leaderboardslot {
+  background: white;
+  border: 2px solid black;
+  margin: 5px 0;
+
+}
 
 @media (min-width: 576px) {
   .container {

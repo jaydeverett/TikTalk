@@ -1,6 +1,9 @@
+<div class="leaderboardtitle">
 <h1>Leaderboard: Top 20</h1>
+</div>
 
 <% @users.each do |user| %>
+  <div class="leaderboardslot">
   <p>
     User: <%= user.username %> <% if user.personality == "Rogue" %>
         <img src="/rogue.png" width="25px" height="25px">
@@ -13,7 +16,8 @@
       <% elsif user.personality == "Diplomat" %>
           <img src="/diplomat.png" width="25px" height="25px">
     <% end %><br>
-    Total Wins: <%= user.total_wins%>
+    Total Wins: <%= user.total_wins %>
 
   </p>
+  </div>
 <% end %>
