@@ -1,18 +1,19 @@
-<h1>Leaderboard</h1>
+<h1>Leaderboard: Top 20</h1>
 
-<% winners = [] %>
+<% @users.each do |user| %>
+  <p>
+    User: <%= user.username %> <% if user.personality == "Rogue" %>
+        <img src="/rogue.png" width="25px" height="25px">
+      <% elsif user.personality == "Vigilante" %>
+          <img src="/vigilante.png" width="25px" height="25px">
+      <% elsif user.personality == "Academic" %>
+          <img src="/academic.png" width="25px" height="25px">
+      <% elsif user.personality == "Philosopher" %>
+          <img src="/philosopher.png" width="25px" height="25px">
+      <% elsif user.personality == "Diplomat" %>
+          <img src="/diplomat.png" width="25px" height="25px">
+    <% end %><br>
+    Total Wins: <%= user.total_wins%>
 
-
-<% @articles.each do |article| %>
-  <% winners << article.winner %>
+  </p>
 <% end %>
-
-
-has where key is the user, value is the sum of times name appears in winners array
-
-sum = 0
-
-
- leaderboard = {}
- <% winners.each.do |winner| %>
-    <% %>

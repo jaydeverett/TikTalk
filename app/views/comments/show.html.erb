@@ -7,7 +7,7 @@
 <%= @article.domain%><br>
 </div>
 
-<% if @a != true && current_user%>
+<% if @a != true && current_user && @article.archived != true %>
 <%= form_for [@article, @comment] do |f| %>
 <%= f.label :content, 'Comment' %> <br>
 <%= f.text_area :content %> <br>
@@ -21,7 +21,17 @@
 <% @comments.each do |comment,likes|%>
 <div class="commentbox">
 <%= link_to user_path(comment.user) do %>
-<%= comment.user.username %>: <br>
+<%= comment.user.username %>: <% if comment.user.personality == "Rogue" %>
+    <img src="/rogue.png" width="25px" height="25px">
+  <% elsif comment.user.personality == "Vigilante" %>
+      <img src="/vigilante.png" width="25px" height="25px">
+  <% elsif comment.user.personality == "Academic" %>
+      <img src="/academic.png" width="25px" height="25px">
+  <% elsif comment.user.personality == "Philosopher" %>
+      <img src="/philosopher.png" width="25px" height="25px">
+  <% elsif comment.user.personality == "Diplomat" %>
+      <img src="/diplomat.png" width="25px" height="25px">
+<% end %><br>
 <% end %>
 <%= comment.content%><br>
 <strong>Total Likes:</strong> <%= likes%><br/>

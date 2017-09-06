@@ -1,9 +1,10 @@
 class UsersController < ApplicationController
 
   def index
-    @users = User.all
-    @user = User.find(params[:id])
-    @articles = Article.all
+    @users = User.order(:total_wins).limit(20)
+    
+
+
   end
 
   def new

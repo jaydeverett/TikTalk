@@ -34,12 +34,27 @@ document.addEventListener("DOMContentLoaded", function(event) {
           timeRemaining[i].style.color = '#ea3225';
         }
         if (seconds === 2) {
-          var timeBox = document.querySelectorAll('.container-fluid') {
-            for (var i = 0; i < timeBox.length; i++) {
-              timeBox[i].style.display = 'none';
+          timeRemaining[i].parentElement.style.display = 'none';
             }
         timeRemaining[i].innerText =   date.toISOString().substr(11, 8);}
     }, 1000);
+
+
+    var slider = document.querySelector('#user_political_spectrum')
+
+      slider.addEventListener(  $("user_political_spectrum") ({
+        min: 1048831,
+        max: 16711680,
+        slide: function (event, ui) {
+            var hex = "#" + ui.value.toString(16);
+            $("#slider").css("background", hex);
+            $("span").text(hex)
+
+
+
+
+
+  }
 
 
 

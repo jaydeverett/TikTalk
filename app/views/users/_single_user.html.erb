@@ -4,7 +4,7 @@
 <p>
 Political View:
 <br>
-<%= @user.political_spectrum %>
+<button style="background-color:#<%= @user.political_spectrum.to_s(16) %>">        <%= @user.political_spectrum.to_s(16) %>    </button>
 </p>
 <p>
 Personal Hero:

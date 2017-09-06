@@ -15,14 +15,8 @@
   <p> Total Comments Made: <%= @user.comments.all.count%></p>
 
 
-  <% my_winning_articles = [] %>
 
-  <% @user.articles.each do |article| %>
-    <% if article.winner == @user %>
-      <% my_winning_articles << article.winner %>
-    <% end %>
-  <% end %>
-  <p> Total Battles Won: <%= my_winning_articles.count %> </p>
+  <p> Total Battles Won: <%= @user.total_wins%> </p>
 
   <div class="edit_profile">
     <%= link_to('Edit Profile', edit_user_path(@user)) %>

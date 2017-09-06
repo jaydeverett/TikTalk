@@ -1,3 +1,4 @@
+
 <% if @user.errors.any? %>
   <div id=“error_explanation”>
     <h2><%= pluralize(@user.errors.count, “error”) %> prohibited this information from being saved:</h2>
@@ -15,7 +16,9 @@
 
 <p>
   <%= f.label :political_spectrum, 'Political View' %>
-  <%= f.range_field :political_spectrum, :min=>0, :max=>100, class:"slide" %>
+  <%= f.range_field :political_spectrum, :min=>1048831, :max=>16711680, class:"slide" %>
+
+
 </p>
 <br>
 

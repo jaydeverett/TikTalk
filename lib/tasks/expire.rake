@@ -5,7 +5,11 @@ namespace :expire do
     @articles = Article.where("created_at < ?", 2.hours.ago)
     @articles.each do |article|
       article.archived = true
+      @user = article.winner
+      @user.total_wins += 1
+      @user.save
       article.save
+
     end
   end
   end
