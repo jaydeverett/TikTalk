@@ -92,23 +92,26 @@ body > div:nth-child(5) > div > a {
 
 .display-leanings{
 /*border: 3px solid black;*/
-width: 27%;
+width: 30%;
 display: inline-block;
 background-color: white;
-margin: 10px;
 padding: 10px;
-
+box-sizing: border-box;
 }
 
 .usertrophies {
   background: white;
-  margin: 10px 10px 10px 0;
-
-  width: 70%;
+  width: 68%;
   display: inline-block;
   float: right;
   padding: 10px;
-  /*border-radius: 15px;*/
+  box-sizing: border-box;
+
+}
+
+.leanings_trophies{
+  padding: 10px;
+  box-sizing: border-box;
 }
 
 .wholeprofile{
@@ -127,13 +130,9 @@ padding: 10px;
   text-align: center;
   color: white;
   background: rgba(0, 87, 27, 1);
-  /*margin-top: 7px;*/
+
 }
 
-
-/*.time_left {
-  font-family: 'Permanent Marker', cursive;
-}*/
 
 .commentdomain {
   font-family: 'Vollkorn', serif;
@@ -150,6 +149,23 @@ padding: 10px;
 .commentbox {
   border: 2px solid black;
   background: white;
+}
+
+.sign_up {
+  box-sizing: border-box;
+  text-align: left;
+  box-sizing: border-box;
+  padding-top: 10px;
+  font-family: 'Armata', sans-serif;
+}
+
+.create_left {
+  display: inline-block;
+
+}
+
+.create_right {
+  display: inline-block;
 }
 
 
