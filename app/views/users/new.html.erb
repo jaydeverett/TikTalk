@@ -1,37 +1,66 @@
+<div class="sign_up">
 
-<%= form_for @user do |f| %>
-  <p>
-    <%= f.label :username %>
-    <%= f.text_field :username %>
-  </p>
-  <br>
-  <p>
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-  </p>
-  <br>
-  <p>
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
-  </p>
-  <br>
-  <p>
-    <%= f.label :political_spectrum, 'Political View' %>
-    <%= f.range_field :political_spectrum, :min=>0, :max=>100, class:"slide" %>
-  </p>
-  <br>
-  <p>
-    <%= f.label :personal_hero, 'Personal Hero' %>
-    <%= f.text_field :personal_hero %>
-  </p>
-  <br>
+  <%= form_for @user do |f| %>
+    <p class="create_left col-md-2">
+      <%= f.label :username %>
+    </p>
+    <p class="create_right col-md-2">
+      <%= f.text_field :username %>
+    </p>
 
-  <p>
-    <%= f.label :personality, 'Who Are You?' %>
-    <%= f.select :personality, ['Philosopher', 'Rogue', 'Vigilante', 'Diplomat', 'Academic'], :prompt => 'Select One' %>
-  </p>
-  <br>
-  <p>
-  <%= f.submit 'Create Account' %>
-  </p>
-  <% end %>
+    <br>
+
+    <p class="create_left col-md-2">
+      <%= f.label :password %>
+    </p>
+    <p class="create_right col-md-2">
+      <%= f.password_field :password %>
+    </p>
+
+    <br>
+
+    <p class="create_left col-md-2">
+      <%= f.label :password_confirmation %>
+    </p>
+    <p class="create_right col-md-2">
+      <%= f.password_field :password_confirmation %>
+    </p>
+
+    <br>
+
+    <p class="create_left col-md-2">
+      <%= f.label :political_spectrum, 'Political View' %>
+    </p>
+    <p class="create_right col-md-2">
+      <%= f.range_field :political_spectrum, :min=>0, :max=>100, class:"slide" %>
+    </p>
+
+    <br>
+
+    <p class="create_left col-md-2">
+      <%= f.label :personal_hero, 'Personal Hero' %>
+    </p>
+    <p class="create_right col-md-2">
+      <%= f.text_field :personal_hero %>
+    </p>
+
+    <br>
+
+
+    <p class="create_right col-md-2">
+      <%= f.label :personality, 'Style' %>
+    </p>
+    <p class="create_left col-md-2">
+      <%= f.select :personality, ['Philosopher', 'Rogue', 'Vigilante', 'Diplomat', 'Academic'], :prompt => 'Select One' %>
+    </p>
+
+    <br>
+
+    <p>
+    <%= f.submit 'Create Account' %>
+    </p>
+
+
+    <% end %>
+
+</div>
