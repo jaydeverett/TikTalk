@@ -198,6 +198,8 @@ nav-item a {
 
 .leaderboardtitle {
   font-family: 'Armata', sans-serif;
+  background: rgba(0, 87, 27, 1);
+  color: white;
 }
 
 .leaderboardslot {
@@ -205,6 +207,11 @@ nav-item a {
   border: 2px solid black;
   margin: 5px 0;
 
+}
+
+.logo_style {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 22px;
 }
 
 @media (min-width: 576px) {
