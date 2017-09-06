@@ -206,7 +206,11 @@ nav-item a {
   background: white;
   border: 2px solid black;
   margin: 5px 0;
+}
 
+.leaderboardslot > p {
+    padding-left: 10px;
+    padding-top: 7px;
 }
 
 .logo_style {
