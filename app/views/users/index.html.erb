@@ -5,7 +5,7 @@
 <% @users.each do |user| %>
   <div class="leaderboardslot">
   <p>
-    User: <%= user.username %> <% if user.personality == "Rogue" %>
+    User: <strong><%= user.username %></strong> <% if user.personality == "Rogue" %>
         <img src="/rogue.png" width="25px" height="25px">
       <% elsif user.personality == "Vigilante" %>
           <img src="/vigilante.png" width="25px" height="25px">
@@ -16,7 +16,7 @@
       <% elsif user.personality == "Diplomat" %>
           <img src="/diplomat.png" width="25px" height="25px">
     <% end %><br>
-    Total Wins: <%= user.total_wins %>
+    Total Wins: <strong><%= user.total_wins %></strong>
 
   </p>
   </div>
