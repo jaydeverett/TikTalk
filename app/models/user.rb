@@ -7,6 +7,8 @@ class User < ApplicationRecord
 
   acts_as_voter
 
+  validates :username, uniqueness: true
+
   def my_wins
     wins = 0
     self.articles.each do |article|

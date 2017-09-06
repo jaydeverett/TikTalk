@@ -33,8 +33,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
         if (seconds < 602) {
           timeRemaining[i].style.color = '#ea3225';
         }
-        if (seconds <= 2) {
-          timeRemaining[i].parentElement.style.display = 'none';
+        if (seconds <= 1) {
+          timeRemaining[i].parentElement.parentElement.style.display = 'none';
             }
         timeRemaining[i].innerText =   date.toISOString().substr(11, 8);}
     }, 1000);
