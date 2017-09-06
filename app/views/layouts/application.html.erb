@@ -47,10 +47,11 @@
           <li class="nav-item">
             <%= link_to 'Leaderboard', users_path, class: "nav-link plain"%>
           </li>
-          <%= link_to "Log out", session_path("current"), :method => :delete, class: "nav-link plain" %>
-
           <li class="nav-item">
-              <span class="signedinas">Signed in as <strong> <%= current_user.username %>
+            <%= link_to "Log out", session_path("current"), :method => :delete, class: "nav-link plain" %>
+          </li>
+          <li class="nav-item signedinas">
+              <span id="sign_in_white">Signed in as <strong> <%= current_user.username %>
 
               <% if current_user.personality == "Rogue" %>
                   <img src="/rogue.png" width="20px" height="20px">
