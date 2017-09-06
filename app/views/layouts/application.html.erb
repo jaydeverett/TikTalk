@@ -15,6 +15,11 @@
   </head>
 
   <body>
+    <% if flash.any? %>
+    <% flash.each do |key, message| %>
+    <div class="<%= key %>"><%= message %></div>
+    <% end %>
+    <% end %>
     <nav class="navbar navbar-expand-lg n-bar-custom bg-custom-green">
 
 
@@ -27,7 +32,9 @@
       </button>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
         <ul class="navbar-nav mr-auto">
+          
           <li class="nav-item">
             <a class="nav-link plain" href= "/articles">Home <span class="sr-only">(current)</span></a>
           </li>
@@ -35,24 +42,26 @@
           <li class="nav-item">
               <%= link_to 'Profile', user_path(current_user.id), class: "nav-link plain"%>
           </li>
+          <li class="nav-item">
+            <%= link_to 'Leaderboard', users_path, class: "nav-link plain"%>
+          </li>
+          <%= link_to "Log out", session_path("current"), :method => :delete, class: "nav-link plain" %>
 
           <li class="nav-item">
               <span class="signedinas">Signed in as <strong> <%= current_user.username %>
-              <% if current_user.personality == "Rogue" %>
-                  <img src="/rogue.png" width="60px" height="60px">
-                <% elsif current_user.personality == "Vigilante" %>
-                    <img src="/vigilante.png" width="60px" height="60px">
-                <% elsif current_user.personality == "Academic" %>
-                    <img src="/academic.png" width="60px" height="60px">
-                <% elsif current_user.personality == "Philosopher" %>
-                    <img src="/philosopher.png" width="60px" height="60px">
-                <% elsif current_user.personality == "Diplomat" %>
-                    <img src="/diplomat.png" width="60px" height="60px">
-              <% end %></strong> </span> <%= link_to "Log out", session_path("current"), :method => :delete, class: "nav-link plain" %>
 
-              <li class="nav-item">
-                <%= link_to 'Leaderboard', users_path, class: "nav-link plain"%>
-              </li>
+              <% if current_user.personality == "Rogue" %>
+                  <img src="/rogue.png" width="20px" height="20px">
+                <% elsif current_user.personality == "Vigilante" %>
+                    <img src="/vigilante.png" width="20px" height="20px">
+                <% elsif current_user.personality == "Academic" %>
+                    <img src="/academic.png" width="20px" height="20px">
+                <% elsif current_user.personality == "Philosopher" %>
+                    <img src="/philosopher.png" width="20px" height="20px">
+                <% elsif current_user.personality == "Diplomat" %>
+                    <img src="/diplomat.png" width="20px" height="20px">
+              <% end %></strong> </span>
+
             <% else %>
           <li class="nav-item">
              <%= link_to "Log in", new_session_path, class: "nav-link plain" %>
@@ -73,11 +82,6 @@
 
 
 
-    <% if flash.any? %>
-      <% flash.each do |key, message| %>
-        <div class="<%= key %>"><%= message %></div>
-      <% end %>
-    <% end %>
 
 
     <%= yield %>
