@@ -2,7 +2,7 @@ namespace :expire do
   desc "TODO"
   task article: :environment do
     while 1
-      @articles = Article.where("created_at < ?", 2.hours.ago)
+      @articles = Article.where("created_at < ?", 2.hours.ago).where(archived: false)
       @articles.each do |article|
         article.archived = true
         @user = article.winner
