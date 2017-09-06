@@ -7,7 +7,11 @@ class Article < ApplicationRecord
 
   def winner
     if self.archived == true
-      return Comment.order_comments(self.comments).last.user
+      unless Comment.order_comments(self.comments).last
+        return nil
+      else
+        return Comment.order_comments(self.comments).last.user
+      end
     end
   end
 
