@@ -33,11 +33,10 @@
           </li>
             <% if current_user %>
           <li class="nav-item">
-             <a class="nav-link plain"> <%= link_to 'Profile', user_path(current_user.id)%></a>
+              <%= link_to 'Profile', user_path(current_user.id), class: "nav-link plain"%>
           </li>
-          <% end %>
+
           <li class="nav-item">
-            <a class="nav-link plain"> <% if current_user %>
               <span class="signedinas">Signed in as <strong> <%= current_user.username %>
               <% if current_user.personality == "Rogue" %>
                   <img src="/rogue.png" width="60px" height="60px">
@@ -49,18 +48,19 @@
                     <img src="/philosopher.png" width="60px" height="60px">
                 <% elsif current_user.personality == "Diplomat" %>
                     <img src="/diplomat.png" width="60px" height="60px">
-              <% end %></strong> </span> <%= link_to "Log out", session_path("current"), :method => :delete %>
+              <% end %></strong> </span> <%= link_to "Log out", session_path("current"), :method => :delete, class: "nav-link plain" %>
+
+              <li class="nav-item">
+                <%= link_to 'Leaderboard', users_path, class: "nav-link plain"%>
+              </li>
             <% else %>
           <li class="nav-item">
-             <a class="nav-link plain" <%= link_to "Log in", new_session_path %></a>
+             <%= link_to "Log in", new_session_path, class: "nav-link plain" %>
           </li>
           <li class="nav-item">
-             <a class="nav-link plain" <%= link_to "Sign up", new_user_path %></a>
+             <%= link_to "Sign up", new_user_path, class: "nav-link plain" %>
           </li>
             <% end %>
-          </li>
-          <li class="nav-item">
-               <a class="nav-link plain"> <%= link_to 'Leaderboard', users_path%></a>
           </li>
         </ul>
         <!-- <form class="form-inline my-2 my-lg-0">
