@@ -95,6 +95,7 @@ body {
   line-height: 1.5;
   color: #212529;
   background-color: linen;
+  /*border: 2px groove #AA1E38*/
 }
 
 [tabindex="-1"]:focus {
@@ -8192,6 +8193,9 @@ a.text-dark:focus, a.text-dark:hover {
 
 .n-bar-custom{
     background: rgba(0, 87, 27, 1);
+}
+.nav-item a{
+  color: floralwhite;
 }
 
 .plain{

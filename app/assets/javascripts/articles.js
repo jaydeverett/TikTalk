@@ -40,22 +40,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
     }, 1000);
 
 
-    var slider = document.querySelector('#user_political_spectrum')
-
-      slider.addEventListener(  $("user_political_spectrum") ({
-        min: 1048831,
-        max: 16711680,
-        slide: function (event, ui) {
-            var hex = "#" + ui.value.toString(16);
-            $("#slider").css("background", hex);
-            $("span").text(hex)
-
-
-
-
-
-  }
-
 
 
 

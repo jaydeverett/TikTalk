@@ -3,7 +3,7 @@
   <head>
     <title>Views</title>
     <%= csrf_meta_tags %>
-  
+
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -33,18 +33,30 @@
           </li>
             <% if current_user %>
           <li class="nav-item">
-             <a class="nav-link plain" <%= link_to 'Profile', user_path(current_user.id)%></a>
+             <a class="nav-link plain"> <%= link_to 'Profile', user_path(current_user.id)%></a>
             <% end %>
           </li>
           <li class="nav-item">
-            <a class="nav-link plain" <% if current_user %>
-              Signed in as <%= current_user.username %>. <%= link_to "Log out", session_path("current"), :method => :delete %>
+            <a class="nav-link plain"> <% if current_user %>
+              <span class="signedinas">Signed in as <strong> <%= current_user.username %>
+              <% if current_user.personality == "Rogue" %>
+                  <img src="/rogue.png" width="60px" height="60px">
+                <% elsif current_user.personality == "Vigilante" %>
+                    <img src="/vigilante.png" width="60px" height="60px">
+                <% elsif current_user.personality == "Academic" %>
+                    <img src="/academic.png" width="60px" height="60px">
+                <% elsif current_user.personality == "Philosopher" %>
+                    <img src="/philosopher.png" width="60px" height="60px">
+                <% elsif current_user.personality == "Diplomat" %>
+                    <img src="/diplomat.png" width="60px" height="60px">
+              <% end %></strong> </span> <%= link_to "Log out", session_path("current"), :method => :delete %>
             <% else %>
               <%= link_to "Log in", new_session_path %><%= link_to "Sign up", new_user_path %>
             <% end %>
-          </a>
           </li>
-
+          <li class="nav-item">
+               <a class="nav-link plain"> <%= link_to 'Leaderboard', users_path%></a>
+          </li>
         </ul>
         <!-- <form class="form-inline my-2 my-lg-0">
           <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">

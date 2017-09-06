@@ -45,6 +45,18 @@ body > div:nth-child(5) > div > a {
 
 /*font-family: 'Old Standard TT', serif;*/
 }
+.nav-link plain{
+  display: inline-block;
+
+}
+
+
+.signedinas{
+  position: absolute;
+  left: 80%;
+  top: 5%
+  color: white;
+}
 
 .conversationblock {
   display: inline-block;
@@ -129,7 +141,9 @@ padding: 10px;
   background: rgba(0, 87, 27, 1);
   /*margin-top: 7px;*/
 }
-
+nav-item a {
+  margin: 25%;
+}
 
 /*.time_left {
   font-family: 'Permanent Marker', cursive;
