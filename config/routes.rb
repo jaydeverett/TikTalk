@@ -14,5 +14,7 @@ Rails.application.routes.draw do
   resources :trophies
   resources :votes
 
+  root 'articles#index'
+
 
 end
