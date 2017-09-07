@@ -14,7 +14,7 @@ class ArticlesController < ApplicationController
 
     @articles = Article.where(archived: false).order('created_at DESC')
 
-    
+
 
   end
 
@@ -33,6 +33,13 @@ class ArticlesController < ApplicationController
 
   def destroy
 
+  end
+
+  def runbackgroundjobs
+    if params[:pass] == 'gurjant'
+    WorkJob.perform_later
+    end
+      redirect_to(action:'index')
   end
 
 end
