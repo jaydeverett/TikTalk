@@ -16,12 +16,12 @@
     <p> Total Battles Won: <%= @user.total_wins %> </p>
 
     <% if current_user == @user %>
-    <div class="edit_profile">
+  <div class="edit_profile">
       <%= link_to('Edit Profile', edit_user_path(@user)) %>
-    </div>
   </div>
   <% end %>
 
+</div>
 
 
   <div class="leanings_trophies">
