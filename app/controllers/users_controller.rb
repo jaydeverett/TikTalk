@@ -48,7 +48,7 @@ class UsersController < ApplicationController
     end
   else
     redirect_to user_path(@user.id)
-
+end
   end
   def user_params
     params.require(:user).permit(:username, :password, :password_confirmation, :political_spectrum, :personal_hero, :personality)
