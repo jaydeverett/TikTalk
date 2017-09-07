@@ -7,6 +7,13 @@ class User < ApplicationRecord
   acts_as_voter
 
   validates :username, uniqueness: true
+  validate :user_can_only_edit_own_profile
+
+  def user_can_only_edit_own_profile
+    if current_user.id != self.id
+      errors.add(message: "You cannot edit another person's profile!")
+  end
+  end
 
   def my_wins
     wins = 0
