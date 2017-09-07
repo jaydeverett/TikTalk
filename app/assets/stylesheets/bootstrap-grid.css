@@ -70,6 +70,11 @@ body > div:nth-child(5) > div > a {
   color: white;
 }
 
+/*#sign_in_white > strong > img{
+  margin: 10px solid white;
+  background-color: white;
+}*/
+
 .conversationblock {
   display: inline-block;
   width: 75%;
