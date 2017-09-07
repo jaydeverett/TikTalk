@@ -9,9 +9,10 @@ namespace :expire do
         unless @user
           article.destroy
         else
+        if  article.save!
           @user.total_wins += 1
           @user.save
-          article.save
+        end
         end
       end
     end
