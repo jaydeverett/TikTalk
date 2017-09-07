@@ -12,7 +12,7 @@ class ArticlesController < ApplicationController
 
   def index
 
-    @articles = Article.where(archived: false).order('created_at DESC')
+    @articles = Article.all
 
 
 
