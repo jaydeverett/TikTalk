@@ -27,8 +27,9 @@ body {
 
 .newsheader h1 {
   display: inline-block;
-  width: 70%;
+  width: 95%;
   margin-left: 15px;
+  text-align: right;
 }
 
 .clockheader p {
@@ -70,10 +71,10 @@ body > div:nth-child(5) > div > a {
   color: white;
 }
 
-/*#sign_in_white > strong > img{
+#sign_in_white > strong > img{
   margin: 10px solid white;
   background-color: white;
-}*/
+}
 
 .conversationblock {
   display: inline-block;
@@ -126,6 +127,7 @@ display: inline-block;
 background-color: white;
 padding: 10px;
 box-sizing: border-box;
+height: auto;
 }
 
 .usertrophies {
@@ -134,8 +136,8 @@ box-sizing: border-box;
   display: inline-block;
   float: right;
   padding: 10px;
-  /*box-sizing: border-box;*/
-  max-height: 300px;
+  box-sizing: border-box;
+  max-height: 325px;
   overflow: auto;
 }
 
@@ -168,6 +170,17 @@ box-sizing: border-box;
 }
 nav-item a {
   margin: 25%;
+
+}
+
+.login_page{
+  font-family: 'Armata', sans-serif;
+  padding-left: 10px;
+}
+
+#login_button {
+  padding-left: 10px;
+  margin: 0 5px 0;
 
 }
 
@@ -211,13 +224,16 @@ nav-item a {
   background: rgba(0, 87, 27, 1);
   color: white;
   padding: 3px;
-  padding-left: 12px;
+  padding-right: 30px;
+  width: 100%;
+  text-align: right;
 }
 
 .leaderboardslot {
   background: white;
   border: 2px solid black;
   margin: 5px 0;
+
 }
 
 .leaderboardslot > p {

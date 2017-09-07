@@ -24,7 +24,7 @@
 
 
       <!-- <a class="navbar-brand" href="#">TimeBomb</a> -->
-      <img class="navbar-brand" src="/noun_640353_cc.png" width="40" height="50" class="d-inline-block align-top" alt="">
+      <!-- <img class="navbar-brand" src="/noun_640353_cc.png" width="40" height="50" class="d-inline-block align-top" alt=""> -->
 
 
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -54,15 +54,15 @@
               <span id="sign_in_white">Signed in as <strong> <%= current_user.username %>
 
               <% if current_user.personality == "Rogue" %>
-                  <img src="/rogue.png" width="20px" height="20px">
+                  <img src="/rogue.png" width="30px" height="30px">
                 <% elsif current_user.personality == "Vigilante" %>
-                    <img src="/vigilante.png" width="20px" height="20px">
+                    <img src="/vigilante.png" width="30px" height="30px">
                 <% elsif current_user.personality == "Academic" %>
-                    <img src="/academic.png" width="20px" height="20px">
+                    <img src="/academic.png" width="30px" height="30px">
                 <% elsif current_user.personality == "Philosopher" %>
-                    <img src="/philosopher.png" width="20px" height="20px">
+                    <img src="/philosopher.png" width="30px" height="30px">
                 <% elsif current_user.personality == "Diplomat" %>
-                    <img src="/diplomat.png" width="20px" height="20px">
+                    <img src="/diplomat.png" width="30px" height="30px">
               <% end %></strong> </span>
 
             <% else %>

@@ -1,13 +1,26 @@
-<h1>Log in</h1>
+<h1 class="login_page">Log in</h1>
 
+<span class="login_page">
 <%= form_tag sessions_path do %>
   <div class="field">
-    <%= label_tag :username %><br/>
-    <%= text_field_tag :username, params[:username] %>
-  </div>
+    <p class="create_left col-md-2">
+      <%= label_tag :username %><br/>
+    </p>
+    <p class="create_right col-md-2">
+      <%= text_field_tag :username, params[:username] %>
+    </p>
+    </div>
   <div class="field">
-    <%= label_tag :password %><br/>
-    <%= password_field_tag :password %>
+    <p class="create_left col-md-2">
+      <%= label_tag :password %><br/>
+    </p>
+    <p class="create_right col-md-2">
+      <%= password_field_tag :password %>
+    </p>
   </div>
-  <div class="actions"><%= submit_tag "Log in" %></div>
+
+
+  <div class="actions" id='login_button'><%= submit_tag "Log in" %></div>
+  <br>
+</span>
 <% end %>
