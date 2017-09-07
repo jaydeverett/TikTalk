@@ -11,6 +11,7 @@ gem 'rails', '~> 5.1.3'
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3'
 gem 'pg'
+gem 'rails_12factor', group: :production
 
 gem 'delayed_job_active_record'
 # Use Puma as the app server
