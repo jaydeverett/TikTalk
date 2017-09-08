@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         if (seconds < 602) {
           timeRemaining[i].style.color = '#ea3225';
         }
-        if (seconds <= 1) {
+        if (seconds <= 1 || seconds > 7200) {
           timeRemaining[i].parentElement.parentElement.style.display = 'none';
             }
         timeRemaining[i].innerText =   date.toISOString().substr(11, 8);}
