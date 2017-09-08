@@ -10,6 +10,7 @@
 <% @users.each do |user| %>
   <div class="leaderboardslot">
   <p>
+    <%= link_to user_path(user.id) do %>
     User: <strong><%= user.username %></strong> <% if user.personality == "Rogue" %>
         <img src="/rogue.png" width="25px" height="25px">
       <% elsif user.personality == "Vigilante" %>
@@ -20,6 +21,7 @@
           <img src="/philosopher.png" width="25px" height="25px">
       <% elsif user.personality == "Diplomat" %>
           <img src="/diplomat.png" width="25px" height="25px">
+    <% end %>
     <% end %><br>
     Total Wins: <strong><%= user.total_wins %></strong>
 
