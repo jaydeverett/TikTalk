@@ -40,6 +40,9 @@
           <li class="nav-item">
             <a class="nav-link plain" href= "/articles">Home <span class="sr-only">(current)</span></a>
           </li>
+          <li class="nav-item">
+            <%= link_to 'Leaderboard', users_path, class: "nav-link plain"%>
+          </li>
             <% if current_user %>
           <li class="nav-item">
               <%= link_to 'Profile', user_path(current_user.id), class: "nav-link plain"%>
