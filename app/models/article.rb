@@ -1,7 +1,7 @@
 class Article < ApplicationRecord
   has_many :comments
 
-  validates :title, uniqueness: true
+  validates :url, :title, uniqueness: true
 
 
   def winner
