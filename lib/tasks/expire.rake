@@ -2,48 +2,43 @@ namespace :expire do
   desc "TODO"
   task article: :environment do
 
-      @articles = Article.where("created_at < ?", 2.hours.ago).where(archived: false)
+    @articles = Article.where("created_at < ?", 2.hours.ago).where(archived: false)
 
-      @articles.each do |article|
-        article.archived = true
+    @articles.each do |article|
+      article.archived = true
 
-        @user = article.winner
+      @user = article.winner
 
-        if @user.blank?
-          article.destroy
-        else
-          if article.save
-            @user.total_wins += 1
-            @user.save
-          end
+      if @user.blank?
+        article.destroy
+      else
+        if article.save
+          @user.total_wins += 1
+          @user.save
         end
       end
     end
 
 
-      session = Redd.it(
-        client_id:  "tR3gd1Ylo9swdg",
-        secret:     "1WNzeFaOGVelOB2hl60XBtyY3AY"
-        )
+
+    session = Redd.it(client_id:  "tR3gd1Ylo9swdg",
+                      secret:     "1WNzeFaOGVelOB2hl60XBtyY3AY")
 
 
 
-      session.subreddit('worldnews').post_stream(limit:50).map do |post|
+    session.subreddit('worldnews').post_stream(limit:50).map do |post|
+      @new_article =  Article.new
+      @new_article.title = post.title
+      @new_article.domain = post.domain
+      @new_article.url = post.url
 
-        @new_article =  Article.new
-        @new_article.title = post.title
-        @new_article.domain = post.domain
-        @new_article.url = post.url
+      puts post.title
 
-        puts post.title
-
-         if @new_article.save
-           puts "Saved: #{post.title}"
-         else
-           puts "Unable to Save"
-         end
-
-
+      if @new_article.save
+        puts "Saved: #{post.title}"
+      else
+        puts "Unable to Save"
       end
-
+    end
+  end
 end
