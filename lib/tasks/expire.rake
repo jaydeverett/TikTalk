@@ -19,4 +19,31 @@ namespace :expire do
         end
       end
     end
+
+
+      session = Redd.it(
+        client_id:  "tR3gd1Ylo9swdg",
+        secret:     "1WNzeFaOGVelOB2hl60XBtyY3AY"
+        )
+
+
+
+      session.subreddit('worldnews').post_stream(limit:50).map do |post|
+
+        @new_article =  Article.new
+        @new_article.title = post.title
+        @new_article.domain = post.domain
+        @new_article.url = post.url
+
+        puts post.title
+
+         if @new_article.save
+           puts "Saved: #{post.title}"
+         else
+           puts "Unable to Save"
+         end
+
+
+      end
+
 end
