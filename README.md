@@ -12,4 +12,6 @@ HOW TO PLAY:
 
 3. At the end of the article's 2 hours, if your comment has the most likes, the article is transferred to your profile's trophy case.
 
+* Main feed is streamed via the Reddit r/worldnews API
+
 ---------------------------------------------------------
