@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def index
-    @users = User.order(:total_wins).limit(20).reverse
+    @users = User.order(total_wins: :desc).limit(20)
 
 
 
