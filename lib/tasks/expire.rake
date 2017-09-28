@@ -21,8 +21,8 @@ namespace :expire do
 
 
 
-    session = Redd.it(client_id:  ENV["REDDIT_KEY"],
-                      secret:     ENV["REDDIT_SECRET"])
+    session = Redd.it(client_id:  "tR3gd1Ylo9swdg",
+                      secret:     "1WNzeFaOGVelOB2hl60XBtyY3AY")
 
 
 
